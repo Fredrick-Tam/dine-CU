@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Dine@CU</string>
     <string name="title_activity_opening">Opening</string>
+    <string name="Ferris"> Ferris Booth </string>
+    <string name="John_Jay"> John Jay </string>
+    <string name="JJs"> JJ\'s Place </string>
 </resources>
