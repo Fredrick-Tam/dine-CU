@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_favorites"
+        android:id="@+id/action_menu"
         android:enabled="true"
-        android:icon="@drawable/dining"
+        android:icon="@drawable/menu"
         android:title="menu"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_schedules"
+        android:id="@+id/action_favorites"
         android:enabled="true"
-        android:icon="@drawable/dining"
+        android:icon="@drawable/favorites"
         android:title="favorites"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_music"
+        android:id="@+id/action_invite"
         android:enabled="true"
-        android:icon="@drawable/dining"
+        android:icon="@drawable/invite"
         android:title="invite friends"
         app:showAsAction="ifRoom" />
 </menu>

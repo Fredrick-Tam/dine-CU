@@ -18,7 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dining_Halls"></activity>
+        <activity android:name=".Dining_Halls" />
+        <activity android:name=".Favorites" />
+        <activity android:name=".Ferris" />
+        <activity android:name=".InviteFriends" />
+        <activity android:name=".JohnJay" />
+        <activity android:name=".JJs"></activity>
     </application>
 
 </manifest>

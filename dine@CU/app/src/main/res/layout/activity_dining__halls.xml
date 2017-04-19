@@ -15,9 +15,12 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         app:itemBackground="@color/dining"
+        android:layout_alignParentBottom="true"
         app:itemIconTint="@color/white"
+        android:paddingBottom="0dp"
+        android:layout_weight=".90"
+        android:scaleType="fitXY"
         app:itemTextColor="@color/white"
         app:menu="@menu/bottom_navigation_main" />
 
