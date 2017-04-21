@@ -5,4 +5,17 @@
     <string name="John_Jay"> John Jay </string>
     <string name="JJs"> JJ\'s Place </string>
     <string name="cooking"> What\'s cooking? </string>
+    <string name="time"> What time? </string>
+    <string name="location"> Dining Hall </string>
+    <string name="message"> Message </string>
+    <string name="contacts"> Select Friends </string>
+    <string name="invite"> Invite Friends </string>
+    <string name="meeting_message"> Your message here </string>
+
+    <string-array name="dininghalls">
+        <item>Ferris Booth </item>
+        <item>John Jay </item>
+        <item>JJs </item>
+
+    </string-array>
 </resources>

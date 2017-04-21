@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_invite_friends"
     android:layout_width="match_parent"
@@ -9,5 +10,69 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.fredrick_tam.dinecu.InviteFriends">
+
+    <Button
+        android:text="@string/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button5"
+        android:background="@drawable/custom_button"/>
+
+    <Button
+        android:text="@string/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button5"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_marginTop="60dp"
+        android:id="@+id/button6"
+        android:background="@drawable/custom_button"/>
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/time"
+        android:hint="eg 2:00pm"
+        android:layout_alignBaseline="@+id/button5"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/spinner" />
+
+    <Spinner
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:entries="@array/dininghalls"
+        android:layout_alignBaseline="@+id/button6"
+        android:layout_alignBottom="@+id/button6"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/dining"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@color/white"
+        android:paddingBottom="0dp"
+        android:layout_weight=".90"
+        android:scaleType="fitXY"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_navigation_main" />
+
+    <Button
+        android:text="@string/contacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:background="@color/dining"
+        android:layout_below="@+id/button6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp" />
+
 
 </RelativeLayout>
