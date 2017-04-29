@@ -14,14 +14,13 @@ import android.widget.Button;
 public class Dining_Halls extends AppCompatActivity {
 
     // implementation of OnClickListener class as MyClick
-    private class MyClick implements View.OnClickListener {
+    public class MyClick implements View.OnClickListener {
         public void onClick(View v) {
             switch(v.getId()){
                 // start specified activity based on button pressed
                 case R.id.button:
                     Intent intent = new Intent(Dining_Halls.this,Ferris.class);
                     startActivity(intent);
-
                     break;
                 case R.id.button2:
                     Intent intent2 = new Intent(Dining_Halls.this,JohnJay.class);
@@ -41,8 +40,6 @@ public class Dining_Halls extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle(R.string.cooking);
         setContentView(R.layout.activity_dining__halls);
-
-
 
         // buttons at bottom for navigation
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
@@ -85,4 +82,5 @@ public class Dining_Halls extends AppCompatActivity {
         jjs.setOnClickListener(myClickListener);
 
     }
+
 }

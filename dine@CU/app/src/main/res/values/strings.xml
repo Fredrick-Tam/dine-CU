@@ -11,6 +11,10 @@
     <string name="contacts"> Select Friends </string>
     <string name="invite"> Invite Friends </string>
     <string name="meeting_message"> Your message here </string>
+    <string name="title_activity_livepage">Ferris</string>
+    <string name="parse_html"> </string>
+    <string name="html_button">Get Menu Items</string>
+    <string name="hello">ImageView from URL</string>
 
     <string-array name="dininghalls">
         <item>Ferris Booth </item>
