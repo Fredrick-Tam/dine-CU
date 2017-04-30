@@ -6,12 +6,8 @@
         <!--android:orderInCategory="100" app:showAsAction="never" />-->
 
     <item android:id="@+id/action_information"
-        android:icon="@drawable/information"
+        android:icon="@drawable/electric"
         android:title="@string/information"
-        MonitorResource:showAsAction="always"/>
-    <item android:id="@+id/action_setting"
-        android:icon="@drawable/setting"
-        android:title="@string/setting"
         MonitorResource:showAsAction="always"/>
 
 </menu>

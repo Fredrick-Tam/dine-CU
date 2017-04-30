@@ -1,13 +1,14 @@
 package com.example.fredrick_tam.dinecu;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import org.jsoup.Jsoup;
@@ -43,6 +44,32 @@ public class JohnJay extends AppCompatActivity {
         GetXMLTask JohnJay_XML = new GetXMLTask();
         JohnJay_XML.execute(new String[] { URL });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        switch (id)
+        {
+            case R.id.action_information:
+                Intent intent4 = new Intent(this,EnergyUsage.class);
+                startActivity(intent4);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public class GetXMLTask extends AsyncTask<String, Void, Bitmap> {

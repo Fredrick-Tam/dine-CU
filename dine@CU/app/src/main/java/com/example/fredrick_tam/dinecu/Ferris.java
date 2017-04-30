@@ -1,14 +1,15 @@
 package com.example.fredrick_tam.dinecu;
 
-import java.util.*;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
-
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,9 +21,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import java.util.ArrayList;
 
 
 
@@ -47,6 +46,32 @@ public class Ferris extends AppCompatActivity {
         GetXMLTask ferris_XML = new GetXMLTask();
         ferris_XML.execute(new String[] { URL });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        switch (id)
+        {
+            case R.id.action_information:
+                Intent intent4 = new Intent(this,EnergyUsage.class);
+                startActivity(intent4);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public class GetXMLTask extends AsyncTask<String, Void, Bitmap> {

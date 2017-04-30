@@ -206,14 +206,16 @@ public class EnergyUsage extends AppCompatActivity implements View.OnClickListen
         switch (id)
         {
             case R.id.action_information:
-                break;
-            case R.id.action_setting:
+                Intent intent4 = new Intent(this,EnergyUsage.class);
+                startActivity(intent4);
                 break;
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
     /*
         Helper function to get the current CPU usage by parsing the /proc/stat file
