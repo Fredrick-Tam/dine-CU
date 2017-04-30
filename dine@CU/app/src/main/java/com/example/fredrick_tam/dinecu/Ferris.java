@@ -54,9 +54,8 @@ public class Ferris extends AppCompatActivity {
         protected Bitmap doInBackground(String... urls) {
             try {
                 htmlDocument = Jsoup.connect(htmlPageUrl).get();
-                if (htmlDocument.hasClass("views-field-field-meal-images-fid")){
-                    Elements menu_items = htmlDocument.getElementsByClass("views-field-field-meal-images-fid");
-
+                Elements menu_items = htmlDocument.getElementsByClass("views-field-field-meal-images-fid");
+                if (menu_items.size() > 0){
                     for (Element menu_item : menu_items) {
                         Element link = menu_item.select("a").first();
                         if (link != null){
