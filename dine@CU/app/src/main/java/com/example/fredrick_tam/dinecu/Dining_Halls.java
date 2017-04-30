@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import static com.example.fredrick_tam.dinecu.R.id.energy;
+
 @SuppressWarnings("ConstantConditions")
 public class Dining_Halls extends AppCompatActivity {
 
@@ -30,6 +32,11 @@ public class Dining_Halls extends AppCompatActivity {
                     Intent intent3 = new Intent(Dining_Halls.this,JJs.class);
                     startActivity(intent3);
                     break;
+                case energy:
+                    Intent intent4 = new Intent(Dining_Halls.this,EnergyUsage.class);
+                    startActivity(intent4);
+                    break;
+
             }
         }
     }
@@ -69,17 +76,19 @@ public class Dining_Halls extends AppCompatActivity {
                 });
 
         // linking buttons with MyCLick class
-        Button ferris, johnjay,jjs;
+        Button ferris, johnjay,jjs, energy;
 
         ferris = (Button) findViewById(R.id.button);
         johnjay = (Button) findViewById(R.id.button2);
         jjs = (Button) findViewById(R.id.button3);
+        energy = (Button)findViewById(R.id.energy);
 
         MyClick myClickListener = new Dining_Halls.MyClick();
 
         ferris.setOnClickListener(myClickListener);
         johnjay.setOnClickListener(myClickListener);
         jjs.setOnClickListener(myClickListener);
+        energy.setOnClickListener(myClickListener);
 
     }
 

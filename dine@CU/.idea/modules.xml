@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android-processes-1.0.9/android-processes-1.0.9.iml" filepath="$PROJECT_DIR$/android-processes-1.0.9/android-processes-1.0.9.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dine@CU.iml" filepath="$PROJECT_DIR$/dine@CU.iml" />
       <module fileurl="file://$PROJECT_DIR$/dine@CU.iml" filepath="$PROJECT_DIR$/dine@CU.iml" />
     </modules>
   </component>

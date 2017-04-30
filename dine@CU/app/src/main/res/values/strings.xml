@@ -15,7 +15,11 @@
     <string name="parse_html"> </string>
     <string name="html_button">Get Menu Items</string>
     <string name="hello">ImageView from URL</string>
-
+    <string name="about">For the detailed process information, including CPU usage, memory usage and battery usage</string>
+    <string name="setting">Setting</string>
+    <string name="information">Information</string>
+    <string name="energy">Energy </string>
+    <string name="process"> Process Details </string>
     <string-array name="dininghalls">
         <item>Ferris Booth </item>
         <item>John Jay </item>
