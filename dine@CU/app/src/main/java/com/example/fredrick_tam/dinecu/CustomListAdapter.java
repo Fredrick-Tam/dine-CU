@@ -24,6 +24,10 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         this.imgid=imgid;
     }
 
+    public String getItemName(int position){
+        return itemname[position];
+    }
+
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.mylist, null,true);

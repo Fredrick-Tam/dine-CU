@@ -5,10 +5,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.jsoup.Jsoup;
@@ -31,21 +35,24 @@ public class Ferris extends AppCompatActivity {
     public String htmlPageUrl = "http://dining.columbia.edu/?quicktabs_homepage_menus_quicktabs=0#quicktabs-homepage_menus_quicktabs";
     public ArrayList<String> menuItemNames = new ArrayList<String>();
     public ArrayList<String> menuItemImage = new ArrayList<String>();
+    public AlertDialog alertDialog;
     public String URL;
     public ListView list;
     public String[] nameList;
     public Bitmap[] imageList;
+    public CustomListAdapter adapter;
+    public FavoritesDBHelper db;
     public ArrayList<Bitmap> mapArray = new ArrayList<Bitmap>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle(R.string.Ferris);
+        db = new FavoritesDBHelper(this);
         setContentView(R.layout.activity_ferris);
 
         GetXMLTask ferris_XML = new GetXMLTask();
         ferris_XML.execute(new String[] { URL });
-
     }
 
     @Override
@@ -86,6 +93,7 @@ public class Ferris extends AppCompatActivity {
                         if (link != null){
                             menuItemNames.add(link.attr("title"));
                             menuItemImage.add(link.attr("href"));
+                            db.addItem(link.attr("title"), "Ferris Booth", link.attr("href"));
                         }
                     }
                 } else{
@@ -117,10 +125,37 @@ public class Ferris extends AppCompatActivity {
                 Log.d("bitmap", String.valueOf(img));
             }
 
-            CustomListAdapter adapter=new CustomListAdapter(Ferris.this, nameList, imageList);
+            adapter=new CustomListAdapter(Ferris.this, nameList, imageList);
             list=(ListView)findViewById(R.id.list);
             list.setAdapter(adapter);
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) { //id is position in array of item clicked
+                    String favName = adapter.getItemName(position);
+                    int status = db.toggleItem(favName, "Ferris Booth");
+                    String verb = "";
+                    if(status == 0)
+                        verb = " removed from ";
+                    else
+                        verb = " added to ";
 
+                    alertDialog = new AlertDialog.Builder(Ferris.this).create();
+                    alertDialog.setMessage(favName + verb + " favorites");
+                    alertDialog.show();   //
+
+                    new CountDownTimer(10000, 1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            alertDialog.hide();
+                        }
+                    }.start();
+                }
+            });
         }
 
         // Creates Bitmap from InputStream and returns it
